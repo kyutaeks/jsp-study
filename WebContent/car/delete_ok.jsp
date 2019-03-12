@@ -4,11 +4,11 @@
     pageEncoding="UTF-8"%>
 <%
 request.setCharacterEncoding("utf-8");
-String foodNum = request.getParameter("foodNum");
-String sql = "delete from food where food_num=?";
+String carNum = request.getParameter("carNum");
+String sql = "delete from car where car_num=?";
 
 PreparedStatement ps = DBCon.getCon().prepareStatement(sql);
-ps.setString(1, foodNum);
+ps.setString(1, carNum);
 int cnt = ps.executeUpdate();
 String result = "삭제 실패";
 if(cnt==1){
@@ -17,5 +17,5 @@ if(cnt==1){
 %>
 <script>
 alert("<%=result%>");
-location.href="/jsp-study/food/list.jsp?foodNum=<%=foodNum%>";
+location.href="/jsp-study/car/list.jsp?carNum=<%=carNum%>";
 </script>
