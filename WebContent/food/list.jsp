@@ -45,7 +45,7 @@ if (foodName != null) {
 				ps.setString(cnt++, foodPrice);
 			}
 			ResultSet rs = ps.executeQuery();
-			out.write("<table border=\"1\">");
+			out.write("<table border=\"10\">");
 			while (rs.next()) {
 				out.write("<tr>");
 				out.write("<td>" + rs.getInt("food_num") + "</td>");
