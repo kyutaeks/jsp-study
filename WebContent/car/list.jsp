@@ -63,7 +63,7 @@ if(carName != null){
 			if(carEtc != null && !"".equals(carEtc)){
 				ps.setString(cnt++, carEtc);
 			}
-			Result rs = ps.executeQuery();
+			ResultSet rs = ps.executeQuery();
 			out.write("<table border=\"1\">");
 			while (rs.next()) {
 				out.write("<tr>");
