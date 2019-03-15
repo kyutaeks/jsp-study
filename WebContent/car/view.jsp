@@ -11,6 +11,7 @@
     ResultSet rs = ps.executeQuery();
     if(rs.next()){
     %>
+    <form method="post" action="/jsp-study/req/user_update_ok.jsp" id="userForm">
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,6 +27,7 @@
 	제조회사  : <input type = "text" name = "carVendor" value = "<%=rs.getString("car_vendor")%>"><br>
 	기타  : <input type = "text" name = "carEtc" value = "<%=rs.getString("car_etc")%>"><br>
 	<button>수정</button>
+	<button type="button" onclick="deleteUser()">유저삭제</button>
 </form>
 <a href ="/jsp-study/car/list.jsp">차량리스트</a>
  
