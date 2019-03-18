@@ -5,8 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBCon {
-	private static final String URL = 
-			"jdbc:oracle:thin:@localhost:1521:xe";
+	private static final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
 	private static final String USER = "osfu";
 	private static final String PASSWORD = "12345678";
 	private static final String DRIVER = "oracle.jdbc.OracleDriver";
