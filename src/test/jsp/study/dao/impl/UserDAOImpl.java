@@ -133,4 +133,28 @@ public class UserDAOImpl implements UserDAO {
 		
 
 	}
+
+	@Override
+	public Map<String, String> selectUserById(String uiId) {
+		String sql = "select ui_num, ui_name, ui_id, ui_age, ui_pwd, ui_etc from user_info where ui_id=?";
+		try {
+			PreparedStatement ps = DBCon.getCon().prepareStatement(sql);
+			ps.setString(1, uiId);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				Map<String, String> u = new HashMap<>();
+				u.put("ui_num", rs.getString("ui_num"));
+				u.put("ui_name", rs.getString("ui_name"));
+				u.put("ui_id", rs.getString("ui_id"));
+				u.put("ui_age", rs.getString("ui_age"));
+				u.put("ui_etc", rs.getString("ui_etc"));
+				u.put("ui_pwd", rs.getString("ui_pwd"));
+
+				return u;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 }

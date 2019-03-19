@@ -39,6 +39,11 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		return udao.deleteUser(user);
 	}
+	@Override
+	public Map<String, String> login(String uiId) {
+		// TODO Auto-generated method stub
+		return udao.selectUserById(uiId);
+	}
 
 	public static void main(String[] args) {
 		UserService us = new UserServiceImpl();
@@ -67,4 +72,5 @@ public class UserServiceImpl implements UserService {
 		
 		
 	}
+
 }

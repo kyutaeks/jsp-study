@@ -8,7 +8,8 @@
 </head>
 <body>
 <%
-session.setMaxInactiveInterval(60);
+session.setMaxInactiveInterval(10);
+session.setAttribute("id", "test");
 %>
 <%=session.getId()%>
 </body>
