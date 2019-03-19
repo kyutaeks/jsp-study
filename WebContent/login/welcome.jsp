@@ -16,10 +16,10 @@
 	if (user == null) {
 		response.sendRedirect("/jsp-study/login/login.jsp");
 	} else {
-		out.print(user.get("ui_name") + "님 환영.");
+		out.print("반가워요 " + user.get("ui_name") + " 님 환영합니다.");
 	}
 %>
-<c:set var="str" value="abc"/>
+<!--<c:set var="str" value="abc"/>
 <c:out value="${str}"/>
-${str}
+${str}-->
 </html>
